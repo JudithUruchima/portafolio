@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Pseudo clase que ayuda a declarar variables de cosas que se usan bastante*/
+:root {
+    --color-primario: #212121;
+    --color-secundario: #FBF5E5;
+    --color-terciario: #C890A7;
+    --color-hover: #A35C7A;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+
+
+
+/*Para todos los elementos del HTML con *, selector universal*/
+* {
+    padding: 0;
+    /*estos como que ponen a el archivo en reset osea sin margenes ni nada*/
+    margin: 0;
+}
+
+/*los márgenes y rellenos predeterminados de los navegadores afectan directamente la distribución y el espacio de los elementos en la página.*/
+
+
+/*.texto-destacado {
+    color: lightcoral;
+    text-decoration: underline;
+    margin: 10px 5px 3px 2px;/*aqui en el margin se puede poner de los 4 lados, es respecto a las manecillas del reloj*/
+/* padding: 10px 5px 3px 2px;
+    border: 2px solid #ffffff; /*recibe 3 parametros el ancho, su estilo y el color*/
+/* text-align: justify;
+}*/
+
+/*Selector de clases
+.titulo-blog {
+    color: aquamarine;
+    font-weight: bold;
+}*/
+
+/*Selectores de tipo*/
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /*height: 100vh; /*crece 100 de la altura de la pagina para que no sobren espacios, lo quitamos porque hay otros elementos en la pantalla que tambien tienen espacio*/
+    box-sizing: border-box;
+    /*para que los hijos no se salgan del padre*/
+    font-family: var(--fuente-montserrat);
+}
+
+/*
+span {
+    color: #22D4FD;
+    border: 1px solid #22D4FD;
+    padding: 10px;
+}*/
+
+.header {
+    padding: 2% 0% 0% 7%;
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    /*1 rem es 16 px, teniamos 24'x*/
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.header__menu__link:hover {
+    color: var(--color-secundario);
+}
+
+.presentacion {
+    display: flex;
+    /*Lo pone todo en linea*/
+    align-items: center;
+    /*complementa al display los centra*/
+    padding: 8% 7%;
+    /*Eb=nvez de margin puse padding*/
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido {
+    display: flex;
+    width: 50%;
+    /*tambien se cambio a %*/
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.presentacion__contenido__titulo {
+    font-size: 2.25rem;
+    /*era 36*/
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto {
+    font-size: 1.5rem;
+    /*24px*/
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces {
+    display: flex;
+    /*Lo que ayuda a que sea flexible*/
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /*eje horizontal por que ahora es column*/
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+.presentacion__enlaces__link {
+    width: 50%;
+    /*de px cambiamos a %*/
+    text-align: center;
+    color: var(--color-secundario);
+    text-decoration: none;
+    /*para sacar la linea de enlace*/
+    padding: 21.5px 0;
+    /*primer valor vertical, el segundo valor horizontal*/
+    border-radius: 8px;
+    border: 2px solid var(--color-terciario);
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    /*Para row, osea mi eje principal es horizontal*/
+    gap: 10px;
+
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+    padding: 3.5%;
+    border: 3px solid var(--color-secundario);
+    cursor: pointer;
+}
+
+.presentacion__contenido__link {
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__link:hover {
+    color: var(--color-secundario);
+}
+
+.presentacion__imagen {
+    width: 50%;
+}
+
+.footer {
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.25rem;
+    /*eran 20*/
+    font-weight: 400;
+}
+
+/*@media (max-width: 1023px) {
+    .presentacion {
+        flex-direction: column;
+        
+    }
+}*/
+
+
+/*Para telefonos*/
+@media (max-width: 1200px) {
+    .header {
+        padding: 10%;
+    }
+
+    .header__menu {
+        justify-content: center;
+    }
+
+    .presentacion {
+        flex-direction: column-reverse;
+        /*La imagen esta arriba de todo*/
+        padding: 5%;
+    }
+
+    .presentacion__contenido{
+        width: auto;/*El auto siempre se adapta al elemento padre, el 100% va a ocupar el 100% de la pantalla. */
+    }
+
+    .presentacion__enlaces__link{
+        font-size: 1.20rem;
+    }
+
+}
